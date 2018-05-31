@@ -15,9 +15,8 @@ $(document).ready(function(){
         
 //REDIRECCIONAR PAGINA
 	$('#btnRegistro').click(function(){		
-		//irRegistrar();
-		$('#contInicio').hide();		
-		$('#contRegistro').show();		
+		irRegistrar();
+		
 	});
 
 // ACCION DE BOTONES INICIAR SESION/REGISTRARSE/CERRAR SESION
@@ -58,7 +57,7 @@ function IniciarSesion(){
 	var email=$('#inpEmail').val();
 	var contrasena=$('#inpContrasena').val();
 	firebase.auth().signInWithEmailAndPassword(email, contrasena).catch(function(error) {
-	
+	irPrincipal()
   // Handle Errors here.
 
   var errorCode = error.code;
